@@ -1,11 +1,14 @@
-/* var year = 2020;
+/****************************************************************
+var year = 2020;
 var yearMark = year - 33;
 var yearJohn = year - 28;
 
 console.log(yearJohn);
-console.log(yearMark); */
+console.log(yearMark);
+****************************************************************/
 
-/* var now = 2020;
+/****************************************************************
+var now = 2020;
 var yearJohn = 1989;
 var fullAge = 18;
 
@@ -14,9 +17,11 @@ var ageJohn = now - yearJohn;
 var isFullAge = ageJohn >= fullAge;
 
 console.log(`John is ${ageJohn} years old`)
-console.log(`is he more then 18 years old ? The answer is ${isFullAge}`); */
+console.log(`is he more then 18 years old ? The answer is ${isFullAge}`);
+****************************************************************/
 
-/* var markBMI, markMass, markHeight;
+/****************************************************************
+var markBMI, markMass, markHeight;
 var johnBMI, johnMass, johnHeight;
 
 markMass = 80; 
@@ -32,8 +37,9 @@ var markIsHigher = markBMI > johnBMI;
 console.log(`Mark's BMI : ${markBMI}`);
 console.log(`John's BMI : ${johnBMI}`);
 
-console.log(`Is Mark's BMI hiegher than John's ? ${markIsHigher}.`); */
+console.log(`Is Mark's BMI hiegher than John's ? ${markIsHigher}.`); ****************************************************************/
 
+/****************************************************************
 var johnTeamG1 = 89;
 var johnTeamG2 = 120;
 var johnTeamG3 = 103;
@@ -50,6 +56,8 @@ avgJohnTeam = (johnTeamG1 + johnTeamG2 + johnTeamG3) / 3;
 avgMikeTeam = (mikeTeamG1 + mikeTeamG2 + mikeTeamG3) / 3;
 avgMaryTeam = (maryTeamG1 + maryTeamG2 + maryTeamG3) / 3;
 
+console.log(avgJohnTeam, avgMikeTeam, avgMaryTeam);
+
 if (avgJohnTeam > avgMikeTeam && avgJohnTeam > avgMaryTeam) {
   console.log(`The team of John won. with an average score of ${avgJohnTeam}.`);
 } else if (avgMikeTeam > avgJohnTeam && avgMikeTeam > avgMaryTeam) {
@@ -61,7 +69,24 @@ if (avgJohnTeam > avgMikeTeam && avgJohnTeam > avgMaryTeam) {
     `there is a perfect draw. The two teams have the exact same average score : ${avgJohnTeam}.`
   );
 }
+****************************************************************/
 
-console.log(avgJohnTeam);
-console.log(avgMikeTeam);
-console.log(avgMaryTeam);
+var johnBills = [124, 48, 268];
+var johnFinalBills = [];
+
+function billPlusTipCalculator(bill) {
+  if (bill < 50) {
+    return johnFinalBills.push(bill + bill * (20 / 100));
+  } else if (bill >= 50 && bill < 200) {
+    return johnFinalBills.push(bill + bill * (15 / 100));
+  } else {
+    return johnFinalBills.push(bill + bill * (10 / 100));
+  }
+}
+
+billPlusTipCalculator(johnBills[0]);
+billPlusTipCalculator(johnBills[1]);
+billPlusTipCalculator(johnBills[2]);
+
+console.log(johnBills);
+console.log(johnFinalBills);
