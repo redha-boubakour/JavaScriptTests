@@ -71,6 +71,7 @@ if (avgJohnTeam > avgMikeTeam && avgJohnTeam > avgMaryTeam) {
 }
 ****************************************************************/
 
+/****************************************************************
 var johnBills = [124, 48, 268];
 var johnFinalBills = [];
 
@@ -90,3 +91,34 @@ billPlusTipCalculator(johnBills[2]);
 
 console.log(johnBills);
 console.log(johnFinalBills);
+****************************************************************/
+
+var mark = {
+  fullName: "Mark Smith",
+  mass: 80,
+  height: 1.8,
+  calcBmi: function () {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
+  },
+};
+
+var john = {
+  fullName: "John Smith",
+  mass: 60,
+  height: 1.85,
+  calcBmi: function () {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
+  },
+};
+
+console.log(mark, john);
+
+if (mark.calcBmi() > john.calcBmi()) {
+  console.log(`Mark have a higher BMI. ${mark.bmi}`);
+} else if (john.bmi > mark.bmi) {
+  console.log(`John have a higher BMI. ${john.bmi}`);
+} else {
+  console.log("Their BMI is equal.");
+}
