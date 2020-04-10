@@ -93,6 +93,7 @@ console.log(johnBills);
 console.log(johnFinalBills);
 ****************************************************************/
 
+/****************************************************************
 var mark = {
   fullName: "Mark Smith",
   mass: 80,
@@ -121,4 +122,82 @@ if (mark.calcBmi() > john.calcBmi()) {
   console.log(`John have a higher BMI. ${john.bmi}`);
 } else {
   console.log("Their BMI is equal.");
+}
+****************************************************************/
+
+var john = {
+  bill: [124, 48, 268, 180, 42],
+  tip: [],
+  finalBill: [],
+  tipCalc: function () {
+    for (var i = 0; i < this.bill.length; i++) {
+      if (this.bill[i] < 50) {
+        tipF = this.bill[i] * 0.2;
+      } else if (this.bill[i] >= 50 && this.bill[i] < 200) {
+        tipF = this.bill[i] * 0.15;
+      } else {
+        tipF = this.bill[i] * 0.1;
+      }
+      this.tip.push(tipF);
+    }
+  },
+  addAllCalc: function () {
+    for (var i = 0; i < this.bill.length; i++) {
+      billF = this.bill[i] + this.tip[i];
+      this.finalBill.push(billF);
+    }
+  },
+};
+
+john.tipCalc();
+john.addAllCalc();
+
+console.log(john);
+
+var mark = {
+  bill: [77, 375, 110, 45],
+  tip: [],
+  finalBill: [],
+  tipCalc: function () {
+    for (var i = 0; i < this.bill.length; i++) {
+      if (this.bill[i] < 100) {
+        tipF = this.bill[i] * 0.2;
+      } else if (this.bill[i] >= 100 && this.bill[i] < 300) {
+        tipF = this.bill[i] * 0.1;
+      } else {
+        tipF = this.bill[i] * 0.25;
+      }
+      this.tip.push(tipF);
+    }
+  },
+  addAllCalc: function () {
+    for (var i = 0; i < this.bill.length; i++) {
+      billF = this.bill[i] + this.tip[i];
+      this.finalBill.push(billF);
+    }
+  },
+};
+
+mark.tipCalc();
+mark.addAllCalc();
+
+console.log(mark);
+
+var avgTips = function (arr) {
+  sum = 0;
+  for (i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum / arr.length;
+};
+
+console.log(avgTips(john.tip));
+console.log(avgTips(mark.tip));
+
+if (avgTips(john.tip) > avgTips(mark.tip)) {
+  console.log(`The average tips of John is higher`);
+} else if (avgTips(mark.tip) > avgTips(john.tip)) {
+  console.log(`The average tips of Mark is higher`);
+} else {
+  console.log(`The average tips of John and Mark are equal`);
 }
